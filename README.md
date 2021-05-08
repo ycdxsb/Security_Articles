@@ -44,5 +44,5 @@ LOG_FILE = seebug_spider.log
 python3 seebug_spider.py maxnum
 ```
 
-maxnum是当前https://paper.seebug.org/上的博文的最大`id`号，例如当前最新博文链接为https://paper.seebug.org/1583/，则最大`id`号为`1583`
+maxnum是当前站点上的博文的最大`id`号，例如当前最新博文链接为`https://paper.seebug.org/1583/`，则最大`id`号为`1583`
 
