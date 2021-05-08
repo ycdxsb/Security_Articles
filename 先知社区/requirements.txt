@@ -1,0 +1,4 @@
+requests==2.23.0
+loguru==0.5.3
+chardet==3.0.4
+pdfkit==0.6.1

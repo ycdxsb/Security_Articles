@@ -60,7 +60,7 @@ def get_filename(response):
     else:
         response.encoding = 'utf-8'
     content = response.text
-    title = re.findall('<h1 class="post-title" id=.*>(.*)</h1>', content)[0]
+    title = re.findall('<title>(.*)</title>', content)[0]
     return title
 
 def filter(filename):
@@ -72,7 +72,7 @@ def filter(filename):
 def crawl_ids(ids,config,options):
     for id in ids:
         try:
-            url = "https://paper.seebug.org/%d/" % id
+            url = "https://xz.aliyun.com/t/%d" % id
             logger.info("URL: %s" % url)
             response = requests.get(url, headers=headers)
             if response.status_code == 404 or str(response.status_code)[0:2] == "40":
@@ -82,6 +82,7 @@ def crawl_ids(ids,config,options):
             logger.info("FILE_NAME: %s" % filename)
             filename = unescape(filename)
             filename = filter(filename)
+            filename = filename.replace(' - 先知社区','')
             logger.info("FILE_NAME: %s" % filename)
             filename = os.path.join(PDF_PATH,"%d-%s.pdf" % (id, filename))
             pdfkit.from_url(url, filename, configuration=config,
@@ -129,7 +130,7 @@ def crawl(number):
 if __name__ == '__main__':
     argv = sys.argv
     if(len(argv)!=2):
-        print("usage: python3 seebug_spider.py maxnum")
+        print("usage: python3 xz_spider.py maxnum")
         exit(-1)
     number = int(sys.argv[1])
     crawl(number)
