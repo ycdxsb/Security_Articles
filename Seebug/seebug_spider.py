@@ -38,9 +38,6 @@ def init():
         file = open(ERR_FILE,'w') 
         file.close()
     config = pdfkit.configuration(wkhtmltopdf=WKHTML2PDF_PATH)
-    options = {
-        'encoding': "utf-8"
-    }
 
     options = {
         'encoding': "utf-8",

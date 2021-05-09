@@ -9,9 +9,8 @@
 | [Seebug](https://paper.seebug.org/) | [Spider](https://github.com/ycdxsb/Security_Articles/tree/main/Seebug) | 已完成 |
 | [先知社区](https://xz.aliyun.com/)  | [Spider](https://github.com/ycdxsb/Security_Articles/tree/main/%E5%85%88%E7%9F%A5%E7%A4%BE%E5%8C%BA) | 已完成 |
 | [安全客](https://www.anquanke.com/) | [Spider](https://github.com/ycdxsb/Security_Articles/tree/main/%E5%AE%89%E5%85%A8%E5%AE%A2) | 已完成 |
-| [FreeBuf](https://www.freebuf.com/) | [Spider](https://github.com/ycdxsb/Security_Articles/tree/main/FreeBuf) |  TODO  |
+| [FreeBuf](https://www.freebuf.com/) | [Spider](https://github.com/ycdxsb/Security_Articles/tree/main/FreeBuf) |  已完成  |
 
 ## 依赖
 
 - [wkhtmltopdf](https://wkhtmltopdf.org/)
-
