@@ -58,7 +58,9 @@ def get_filename(response):
         response.encoding = 'utf-8'
     content = response.text
     content = content.replace("\n","")
-    title = re.findall('<h1>(.*)</h1>', content)[0]
+    # title = re.findall('<h1>(.*)</h1>', content)[0]
+    title = re.findall('<title>(.*)</title>', content)[0]
+    title = title.replace(" - 安全客，安全资讯平台","")
     title = title.strip()
     return title
 

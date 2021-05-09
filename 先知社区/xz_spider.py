@@ -38,6 +38,9 @@ def init():
         file = open(ERR_FILE,'w') 
         file.close()
     config = pdfkit.configuration(wkhtmltopdf=WKHTML2PDF_PATH)
+    options = {
+        'encoding': "utf-8"
+    }
 
     options = {
         'encoding': "utf-8",
@@ -58,6 +61,8 @@ def get_filename(response):
         response.encoding = 'utf-8'
     content = response.text
     title = re.findall('<title>(.*)</title>', content)[0]
+    title = title.replace(' - 先知社区','')
+    title = title.strip()
     return title
 
 def filter(filename):
@@ -79,7 +84,6 @@ def crawl_ids(ids,config,options):
             logger.info("FILE_NAME: %s" % filename)
             filename = unescape(filename)
             filename = filter(filename)
-            filename = filename.replace(' - 先知社区','')
             logger.info("FILE_NAME: %s" % filename)
             filename = os.path.join(PDF_PATH,"%d-%s.pdf" % (id, filename))
             pdfkit.from_url(url, filename, configuration=config,
@@ -109,6 +113,9 @@ def crawl_ids(ids,config,options):
 
 def crawl(number):
     config , options = init()
+    ids = [8384, 8789, 5513, 2318, 5425, 8718, 6143, 7018, 8974, 8743, 6916, 2580, 8074, 5721, 4508, 8193, 2413, 2235, 7656, 5603, 5765, 8810, 8890, 8458, 6191, 5709, 9175, 7795, 5536, 6781, 7878, 9302, 4425, 8802, 8902, 1990, 8699, 5759, 9021, 8226, 8786, 5197, 7103, 2301, 9241, 9476, 2691, 7594, 2339, 9311, 2596, 4756, 9371, 8782, 8645, 8730, 7109, 1983, 9143, 5493, 8831, 8746, 8747, 7797, 8774, 6040, 8797, 8894, 3012, 5615]
+    crawl_ids(ids,config,options)
+    exit(0)
     # process error ids
     if os.path.exists(ERR_FILE):
         with open(ERR_FILE) as f:

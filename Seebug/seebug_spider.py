@@ -38,6 +38,9 @@ def init():
         file = open(ERR_FILE,'w') 
         file.close()
     config = pdfkit.configuration(wkhtmltopdf=WKHTML2PDF_PATH)
+    options = {
+        'encoding': "utf-8"
+    }
 
     options = {
         'encoding': "utf-8",
@@ -57,7 +60,9 @@ def get_filename(response):
     else:
         response.encoding = 'utf-8'
     content = response.text
-    title = re.findall('<h1 class="post-title" id=.*>(.*)</h1>', content)[0]
+    # title = re.findall('<h1 class="post-title" id=.*>(.*)</h1>', content)[0]
+    title = re.findall('<title>(.*)</title>', content)[0]
+    title = title.strip()
     return title
 
 def filter(filename):
