@@ -23,6 +23,8 @@ def init():
     global PDF_PATH
     global LOG_FILE
     global categories
+    global base_url
+    base_url = "https://www.freebuf.com/%s/%d.html"
     
     headers = {
         'User-Agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.1; ',
@@ -73,7 +75,7 @@ def filter(filename):
     return(filename)
 
 def crawl_id(id,category,config,options,filename=None):
-    base_url = "https://www.freebuf.com/%s/%d.html"
+    global base_url
     url = base_url % (category,id)
     bad_urls = []
     BLACK_FILE = 'blacklist.txt'
@@ -89,7 +91,16 @@ def crawl_id(id,category,config,options,filename=None):
         response = requests.get(url, headers=headers)
         if response.status_code == 404 or str(response.status_code)[0:2] == "40":
             logger.debug("status: %d" % response.status_code)
-            return
+            base_urls = ["https://www.freebuf.com/articles/%s/%d","https://www.freebuf.com/%s/%d"]
+            if(base_url == base_urls[0]):
+                base_url = base_urls[1]
+            else:
+                base_url = base_urls[0]
+            url = base_url % (category,id)
+            response = requests.get(url, headers=headers)
+            if response.status_code == 404 or str(response.status_code)[0:2] == "40":
+                logger.debug("status: %d" % response.status_code)
+                return
         if(filename==None):
             filename = get_filename(response)
         logger.info("FILE_NAME: %s" % filename)
