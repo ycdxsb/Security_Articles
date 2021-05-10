@@ -103,7 +103,6 @@ def crawl_id(id,category,config,options,filename=None):
             err_urls = f.read()
         err_urls = err_urls.split("\n")
         err_urls = [err_url for err_url in err_urls if err_url!=""]
-        print(err_urls)
         if(url not in err_urls):
             err_urls.append(url)
             with open(ERR_FILE,'w') as f:
@@ -141,12 +140,8 @@ def crawl():
             logger.info("PAGE_URL: %s" % url)
             response = requests.get(url, headers=headers)
             text = json.loads(response.text)
-            try:
-                if len(text['data']['data_list'])==0:
-                    break
-            except Exception as e:
-                print(text)
-                exit(0)
+            if len(text['data']['data_list'])==0:
+                break
             for item in text['data']['data_list']:
                 id = int(item["ID"])
                 if(id in ids):
