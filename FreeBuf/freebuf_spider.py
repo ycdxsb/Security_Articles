@@ -136,12 +136,8 @@ def crawl():
     '''
     page_base_url = "https://www.freebuf.com/fapi/frontend/category/list?name=%s&tag=category&limit=20&page=%d&select=0&order=0"
     #categories = ['network','web','wireless','es','terminal','database','vul','sectool','geek','ics-articles','system','security-management']
-    categories = ['network']
     for category in categories:
         page_id = 1
-        import sys
-        if(len(sys.argv)==2):
-            page_id = int(sys.argv[1])
         category_path = os.path.join(PDF_PATH,category)
         if not os.path.exists(category_path):
             os.mkdir(category_path)
