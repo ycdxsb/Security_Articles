@@ -73,3 +73,8 @@ Freebuf的效果有点问题，左侧边栏会对文章首部有所遮挡，但�
 
 ![image-20210510121809435](https://ycdxsb-1257345996.cos.ap-beijing.myqcloud.com/blog/2021-10-05-image-20210510121809435.png)
 
+
+
+### 问题
+
+发现wkhtmltopdf有的页面会有超时，比如https://www.freebuf.com/network/225926，拉进url黑名单处理，或者改pdfkit接口加入timeout，参考：https://github.com/JazzCore/python-pdfkit/pull/151

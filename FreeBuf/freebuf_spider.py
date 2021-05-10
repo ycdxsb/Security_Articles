@@ -75,6 +75,15 @@ def filter(filename):
 def crawl_id(id,category,config,options,filename=None):
     base_url = "https://www.freebuf.com/%s/%d"
     url = base_url % (category,id)
+    bad_urls = []
+    BLACK_FILE = 'blacklist.txt'
+    if(os.path.exists(BLACK_FILE)):
+        with open(BLACK_FILE,'r') as f:
+            bad_urls = f.read()
+        bad_urls = bad_urls.split("\n")
+        bad_urls = [bad_url for bad_url in bad_urls if bad_url!=""]
+    if(url in bad_urls):
+        return
     logger.info("URL: %s" % url)
     try:
         response = requests.get(url, headers=headers)
@@ -127,9 +136,12 @@ def crawl():
     '''
     page_base_url = "https://www.freebuf.com/fapi/frontend/category/list?name=%s&tag=category&limit=20&page=%d&select=0&order=0"
     #categories = ['network','web','wireless','es','terminal','database','vul','sectool','geek','ics-articles','system','security-management']
-    
+    categories = ['network']
     for category in categories:
         page_id = 1
+        import sys
+        if(len(sys.argv)==2):
+            page_id = int(sys.argv[1])
         category_path = os.path.join(PDF_PATH,category)
         if not os.path.exists(category_path):
             os.mkdir(category_path)
