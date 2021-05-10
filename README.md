@@ -1,6 +1,14 @@
 <h1 align="center">Security Article</h1>
 
-> 爬取安全领域文章(Seebug、先知社区、安全客、freebuf、wooyun等)，转成pdf存到本地，离线学习
+> 爬取安全领域文章(Seebug、先知社区、安全客、freebuf等)，转成pdf存到本地
+
+## 原因
+
+一些比较老的博文中的一些关键的图片会由于图片服务器错误（不提供图片）加载失败，但是又毫无办法。
+
+有人选择把图片和文章内容全部爬下来存进数据库重新组织，但是对我个人不是很有必要，直接存成pdf反而更方便我阅读。
+
+**PS**：在找解决方案的时候看到了一个去年完成的项目[Security Search](http://helosec.com/)，主要是实现信息聚合搜索的功能，内容很全也一直在更新。
 
 ## 站点
 
@@ -12,8 +20,6 @@
 | [FreeBuf](https://www.freebuf.com/) | [Spider](https://github.com/ycdxsb/Security_Articles/tree/main/FreeBuf) |  已完成  |
 | [Wooyun](http://www.vuln.cn/wooyundrops) | [Spider](https://github.com/ycdxsb/Security_Articles/tree/main/Wooyun) | 已完成 |
 | [嘶吼](https://www.4hou.com/) |  |  |
-
-
 
 ## 依赖
 
