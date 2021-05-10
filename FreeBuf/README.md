@@ -63,3 +63,13 @@ LOG_FILE = freebuf.log
 python3 freebuf_spider.py
 ```
 
+
+
+### 效果
+
+[demo](https://github.com/ycdxsb/Security_Articles/tree/main/FreeBuf/demo.pdf)
+
+Freebuf的效果有点问题，左侧边栏会对文章首部有所遮挡，但是不太影响阅读
+
+![image-20210510110737383](https://ycdxsb-1257345996.cos.ap-beijing.myqcloud.com/blog/2021-10-05-image-20210510110737383.png)
+

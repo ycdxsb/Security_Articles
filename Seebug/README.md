@@ -36,3 +36,9 @@ python3 seebug_spider.py maxnum
 ```
 
 maxnum是当前站点上的博文的最大`id`号，例如当前最新博文链接为`https://paper.seebug.org/1583/`，则最大`id`号为`1583`
+
+### 效果
+
+[demo](https://github.com/ycdxsb/Security_Articles/tree/main/Seebug/demo.pdf)
+
+![image-20210510111159010](https://ycdxsb-1257345996.cos.ap-beijing.myqcloud.com/blog/2021-10-05-image-20210510111159010.png)

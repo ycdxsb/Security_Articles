@@ -37,3 +37,8 @@ LOG_FILE = anquanke.log
 python3 anquanke_spider.py
 ```
 
+### 效果
+
+[demo](https://github.com/ycdxsb/Security_Articles/tree/main/%E5%AE%89%E5%85%A8%E5%AE%A2/demo.pdf)
+
+![image-20210510111609451](https://ycdxsb-1257345996.cos.ap-beijing.myqcloud.com/blog/2021-10-05-image-20210510111609451.png)

@@ -36,3 +36,10 @@ python3 xz_spider.py maxnum
 ```
 
 maxnum是当前站点上的博文的最大`id`号，例如当前最新博文链接为`https://xz.aliyun.com/t/9517`，则最大`id`号为`9517`
+
+### 效果
+
+[demo](https://github.com/ycdxsb/Security_Articles/tree/main/%E5%85%88%E7%9F%A5%E7%A4%BE%E5%8C%BA/demo.pdf)
+
+![image-20210510111414900](https://ycdxsb-1257345996.cos.ap-beijing.myqcloud.com/blog/2021-10-05-image-20210510111414900.png)
+
