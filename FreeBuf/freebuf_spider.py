@@ -73,7 +73,7 @@ def filter(filename):
     return(filename)
 
 def crawl_id(id,category,config,options,filename=None):
-    base_url = "https://www.freebuf.com/%s/%d"
+    base_url = "https://www.freebuf.com/%s/%d.html"
     url = base_url % (category,id)
     bad_urls = []
     BLACK_FILE = 'blacklist.txt'
